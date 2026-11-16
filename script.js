@@ -41,3 +41,45 @@ const book = document.getElementById('book');
 bookCover.addEventListener('click', () => {
   book.classList.add('open');
 });
+
+// 5. Pindah dari Buku Harian ke Bagian Polaroid (4 Foto)
+const nextToMemoriesBtn = document.getElementById('next-to-memories-btn');
+const sectionMemories = document.getElementById('section-memories');
+
+nextToMemoriesBtn.addEventListener('click', () => {
+  sectionDiary.classList.add('hidden');
+  sectionMemories.classList.remove('hidden');
+});
+
+// Efek klik kartu polaroid bergeser satu per satu
+const polaroidCards = document.querySelectorAll('.polaroid-card');
+polaroidCards.forEach((card, index) => {
+  card.addEventListener('click', () => {
+    card.style.transform = `translateY(-180px) rotate(${index * 15 + 25}deg)`;
+    card.style.opacity = '0';
+    card.style.pointerEvents = 'none';
+  });
+});
+
+// 6. Pindah dari Halaman Polaroid ke Halaman Penutup
+const nextToFinalBtn = document.getElementById('next-to-final-btn');
+const sectionFinal = document.getElementById('section-final');
+
+nextToFinalBtn.addEventListener('click', () => {
+  sectionMemories.classList.add('hidden');
+  sectionFinal.classList.remove('hidden');
+});
+
+// 7. Interaksi Klik Kotak Kado (Kejutan Akhir + Hujan Hati)
+const hugBtn = document.getElementById('hug-btn');
+const secretHugMsg = document.getElementById('secret-hug-msg');
+
+hugBtn.addEventListener('click', () => {
+  hugBtn.innerHTML = '🤗';
+  hugBtn.style.animation = 'none';
+  secretHugMsg.classList.remove('hidden');
+  
+  for (let i = 0; i < 25; i++) {
+    setTimeout(createHeart, i * 80);
+  }
+});
