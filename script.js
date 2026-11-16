@@ -31,13 +31,16 @@ const sectionDiary = document.getElementById('section-diary');
 const bgMusic = document.getElementById('bg-music'); // Elemen audio lagu
 
 startBtn.addEventListener('click', () => {
+  // 1. Jalankan perintah play audio secara eksplisit saat tombol diklik
+  bgMusic.play().then(() => {
+    console.log("Musik berhasil diputar!");
+  }).catch(error => {
+    console.log("Autoplay dicegah oleh browser:", error);
+  });
+
+  // 2. Transisi halaman
   sectionEnvelope.classList.add('hidden');
   sectionDiary.classList.remove('hidden');
-  
-  // Memutar musik saat kejutan dimulai
-  bgMusic.play().catch(error => {
-    console.log("Autoplay dicegah browser.");
-  });
 });
 
 // 4. Interaksi Membuka Buku Harian saat Gembok/Sampul diklik
