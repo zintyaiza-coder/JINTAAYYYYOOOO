@@ -33,10 +33,11 @@ startBtn.addEventListener('click', () => {
   sectionEnvelope.classList.add('hidden');
   sectionDiary.classList.remove('hidden');
 });
-// Interaksi Membuka Buku Harian
-const unlockBtn = document.getElementById('unlock-btn');
+
+// 4. Interaksi Membuka Buku Harian saat Gembok/Sampul diklik
+const bookCover = document.getElementById('book-cover');
 const book = document.getElementById('book');
 
-unlockBtn.addEventListener('click', () => {
+bookCover.addEventListener('click', () => {
   book.classList.add('open');
 });
