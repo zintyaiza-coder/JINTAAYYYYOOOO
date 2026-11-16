@@ -292,3 +292,39 @@ body {
   object-fit: cover;
   display: block;
 }
+/* Mengatur ukuran kotak polaroid agar pas dan estetik */
+.polaroid-card {
+  width: 240px;          /* Lebar kartu polaroid */
+  background: white;
+  padding: 15px 15px 25px 15px; /* Jangka pinggir putih ala polaroid asli */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  position: absolute;
+  transition: all 0.5s ease;
+  cursor: pointer;
+}
+
+/* Mengatur ukuran gambar di dalam polaroid agar tidak terlalu besar */
+.polaroid-img {
+  width: 100%;
+  height: 280px;         /* Tinggi area foto di dalam polaroid */
+  overflow: hidden;
+  background: #f0f0f0;
+}
+
+.polaroid-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;     /* Fotonya pas memenuhi kotak tanpa gepeng */
+  display: block;
+}
+
+/* Teks caption di bawah foto */
+.polaroid-caption {
+  font-family: 'Caveat', cursive;
+  font-size: 20px;
+  color: #555;
+  text-align: center;
+  margin-top: 12px;
+  margin-bottom: 0;
+}
