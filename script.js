@@ -24,14 +24,20 @@ openBtn.addEventListener('click', () => {
   envelope.classList.add('open');
 });
 
-// 3. Pindah ke bagian Buku Harian saat tombol "Mulai Kejutan" diklik
+// 3. Pindah ke bagian Buku Harian saat tombol "Mulai Kejutan" diklik + Memutar Musik
 const startBtn = document.getElementById('start-btn');
 const sectionEnvelope = document.getElementById('section-envelope');
 const sectionDiary = document.getElementById('section-diary');
+const bgMusic = document.getElementById('bg-music'); // Elemen audio lagu
 
 startBtn.addEventListener('click', () => {
   sectionEnvelope.classList.add('hidden');
   sectionDiary.classList.remove('hidden');
+  
+  // Memutar musik saat kejutan dimulai
+  bgMusic.play().catch(error => {
+    console.log("Autoplay dicegah browser.");
+  });
 });
 
 // 4. Interaksi Membuka Buku Harian saat Gembok/Sampul diklik
