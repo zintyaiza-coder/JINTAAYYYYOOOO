@@ -26,7 +26,8 @@
       <!-- Kartu Ucapan di dalam Amplop -->
       <div class="letter-card">
         <p class="subtitle">haiii ell...</p>
-        <h1>pround of you,<br>My friend!</h1>
+        <!-- Diperbaiki dari "pround" menjadi "proud" -->
+        <h1>proud of you,<br>My friend!</h1>
         <p class="desc">Ada sedikit kejutan kecil yang sudah disiapkan khusus untukmu hari ini.</p>
         <button class="btn-pink" id="start-btn">Mulai Kejutan ✨</button>
       </div>
@@ -128,12 +129,13 @@
     </div>
   </section>
 
-  <!-- PENGHUBUNG JAVASCRIPT (Harus di paling bawah sebelum </body>) -->
-  <script src="script.js"></script>
-  <!-- Pemutar Musik Latar Belakang -->
+  <!-- Pemutar Musik Latar Belakang (Ditaruh sebelum script agar siap dibaca) -->
   <audio id="bg-music" loop>
     <source src="ssstik.io_1794835002839.mp3" type="audio/mpeg">
     Browser kamu tidak mendukung pemutar audio.
   </audio>
+
+  <!-- PENGHUBUNG JAVASCRIPT -->
+  <script src="script.js"></script>
 </body>
 </html>
