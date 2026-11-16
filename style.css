@@ -13,6 +13,7 @@ body {
   align-items: center;
   overflow-x: hidden;
   position: relative;
+  padding: 20px;
 }
 
 /* Partikel Hati Melayang */
@@ -44,10 +45,11 @@ body {
   flex-direction: column;
   align-items: center;
   transition: opacity 0.5s ease;
+  width: 100%;
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 /* Desain Amplop */
@@ -63,7 +65,6 @@ body {
   align-items: center;
 }
 
-/* Tutup Atas Amplop */
 .envelope-flap {
   position: absolute;
   top: 0; left: 0;
@@ -76,7 +77,6 @@ body {
   z-index: 4;
 }
 
-/* Kantong Bawah Amplop */
 .envelope-pocket {
   position: absolute;
   bottom: 0; left: 0;
@@ -89,7 +89,6 @@ body {
   z-index: 3;
 }
 
-/* Segel Lilin */
 .wax-seal {
   position: absolute;
   top: 95px;
@@ -110,7 +109,6 @@ body {
   transform: scale(1.1);
 }
 
-/* Kartu Ucapan di Dalam Amplop */
 .letter-card {
   position: absolute;
   width: 290px;
@@ -152,6 +150,8 @@ body {
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(255, 77, 121, 0.35);
   transition: transform 0.2s;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
 }
 
 .btn-pink:hover {
@@ -165,7 +165,6 @@ body {
   font-weight: 500;
 }
 
-/* Efek Ketika Amplop Terbuka */
 .envelope-wrapper.open .envelope-flap {
   transform: rotateX(180deg);
   z-index: 1;
@@ -181,7 +180,7 @@ body {
   z-index: 6;
 }
 
-/* Styling Buku Harian 3D */
+/* --- STYLING BUKU HARIAN 3D (SUDAH DIPERBESAR & BISA SCROLL) --- */
 .diary-container {
   perspective: 1000px;
   display: flex;
@@ -191,8 +190,8 @@ body {
 
 .book {
   position: relative;
-  width: 300px;
-  height: 400px;
+  width: 340px;       /* Diperlebar dari 300px */
+  height: 480px;      /* Ditinggikan dari 400px */
   transform-style: preserve-3d;
   transition: transform 0.8s ease;
 }
@@ -205,14 +204,9 @@ body {
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(214, 51, 108, 0.2);
   backface-visibility: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 30px;
+  padding: 25px;
 }
 
-/* Sampul Depan */
 .front-cover {
   background: linear-gradient(135deg, #ff758f, #ff4d79);
   color: white;
@@ -221,6 +215,10 @@ body {
   transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
   z-index: 2;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .cover-content .lock-icon {
@@ -260,34 +258,45 @@ body {
   text-align: left;
   transform: rotateY(0deg);
   z-index: 1;
+  overflow-y: auto;   /* Teks panjang bisa di-scroll rapi di dalam kertas */
+  display: block;
+}
+
+/* Desain Scrollbar cantik untuk buku harian */
+.inside-page::-webkit-scrollbar {
+  width: 5px;
+}
+.inside-page::-webkit-scrollbar-thumb {
+  background: #ffb3c1;
+  border-radius: 10px;
 }
 
 .diary-page-content h3 {
   font-family: 'Caveat', cursive;
-  font-size: 28px;
+  font-size: 26px;
   color: #d6336c;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .diary-text {
-  font-size: 14px;
+  font-size: 13px;
   color: #555;
   line-height: 1.6;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
 .book.open .front-cover {
   transform: rotateY(-180deg);
 }
 
-/* --- STYLING POLAROID YANG RAPI & MUNGIL --- */
+/* --- STYLING POLAROID (DISESUAIKAN UNTUK CAPTION PANJANG) --- */
 .memories-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 20px;
+  width: 100%;
 }
 
 .memories-container h2 {
@@ -300,67 +309,82 @@ body {
 .memories-subtitle {
   font-size: 13px;
   color: #666;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
 }
 
 .polaroid-stack {
   position: relative;
-  width: 200px;          /* Lebar pas ala polaroid */
-  height: 260px;         /* Tinggi pas ala polaroid */
-  margin: 10px auto 30px auto;
+  width: 280px;          /* Diperlebar agar tulisan muat */
+  height: 390px;         /* Ditinggikan untuk ruang caption */
+  margin: 0 auto 20px auto;
 }
 
 .polaroid-card {
-  width: 200px;
+  width: 280px;
+  height: 390px;
   background: white;
-  padding: 12px 12px 20px 12px; /* Bingkai putih sekeliling foto */
+  padding: 14px 14px 16px 14px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  border-radius: 6px;
+  border-radius: 8px;
   position: absolute;
   top: 0;
   left: 0;
   transition: all 0.5s ease;
   cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 .polaroid-img {
   width: 100%;
-  height: 175px;         /* Tinggi area foto di dalam polaroid */
+  height: 210px;
+  flex-shrink: 0;
   overflow: hidden;
   background: #f0f0f0;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 
 .polaroid-img img {
   width: 100%;
   height: 100%;
-  object-fit: cover;     /* Fotonya pas memenuhi kotak tanpa gepeng */
+  object-fit: cover;
   display: block;
 }
 
 .polaroid-caption {
   font-family: 'Caveat', cursive;
-  font-size: 18px;
-  color: #555;
+  font-size: 17px;       /* Ukuran font tulisan tangan yang pas */
+  line-height: 1.25;
+  color: #444;
   text-align: center;
   margin-top: 10px;
-  margin-bottom: 0;
+  overflow-y: auto;      /* Jika caption sangat panjang, bisa di-scroll */
+  padding-right: 4px;
 }
 
-/* Styling Halaman Penutup (Kotak Kado) */
+.polaroid-caption::-webkit-scrollbar {
+  width: 4px;
+}
+.polaroid-caption::-webkit-scrollbar-thumb {
+  background: #ffc2d4;
+  border-radius: 10px;
+}
+
+/* --- STYLING HALAMAN PENUTUP (KOTAK KADO) --- */
 .final-card {
   background: #fffafb;
-  padding: 35px 25px;
+  padding: 30px 25px;
   border-radius: 16px;
   text-align: center;
   box-shadow: 0 10px 30px rgba(214, 51, 108, 0.2);
-  max-width: 320px;
+  width: 90%;
+  max-width: 360px;      /* Sedikit lebih lebar agar lega */
 }
 
 .gift-icon {
   font-size: 55px;
   cursor: pointer;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   animation: bounce 1.5s infinite;
 }
 
@@ -380,13 +404,13 @@ body {
   font-size: 13px;
   color: #555;
   line-height: 1.5;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
 }
 
 .hidden-message {
   background: #ffe6ee;
-  padding: 15px;
-  border-radius: 10px;
+  padding: 16px;
+  border-radius: 12px;
   margin-top: 15px;
 }
 
@@ -394,10 +418,11 @@ body {
   font-family: 'Caveat', cursive;
   font-size: 24px;
   color: #c9184a;
-  margin-bottom: 5px;
+  margin-bottom: 8px;
 }
 
 .hidden-message p {
   font-size: 13px;
+  line-height: 1.5;
   color: #444;
 }
