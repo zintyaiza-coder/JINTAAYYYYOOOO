@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday, My Sweetheart!</title>
+  <!-- Mengambil font cantik dari Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Container Latar Belakang Partikel Hati -->
+  <div class="floating-hearts" id="hearts-container"></div>
+
+  <!-- BAGIAN 1: AMPLOP UNDANGAN -->
+  <section class="section active" id="section-envelope">
+    <div class="envelope-wrapper" id="envelope">
+      <div class="envelope-flap"></div>
+      <div class="envelope-pocket"></div>
+      
+      <!-- Segel Lilin (Klik di sini) -->
+      <div class="wax-seal" id="open-envelope-btn">
+        <span>❤️</span>
+      </div>
+
+      <!-- Kartu Ucapan di dalam Amplop -->
+      <div class="letter-card">
+        <p class="subtitle">Untuk seseorang yang spesial...</p>
+        <h1>Happy Birthday,<br>My Sweetheart! 🎂</h1>
+        <p class="desc">Ada sedikit kejutan kecil yang sudah disiapkan khusus untukmu hari ini.</p>
+        <button class="btn-pink" id="start-btn">Mulai Kejutan ✨</button>
+      </div>
+    </div>
+    <p class="hint-text">Klik segel hati untuk membuka amplop</p>
+  </section>
+
+  <!-- BAGIAN 2: BUKU HARIAN (Akan kita isi di tahap berikutnya) -->
+  <section class="section hidden" id="section-diary">
+    <div class="card-box">
+      <h2>My Secret Diary 📖</h2>
+      <p>Halaman buku harian berhasil terbuka! Siap lanjut ke kode bagian 2?</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
