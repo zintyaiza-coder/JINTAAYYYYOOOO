@@ -33,3 +33,10 @@ startBtn.addEventListener('click', () => {
   sectionEnvelope.classList.add('hidden');
   sectionDiary.classList.remove('hidden');
 });
+// Interaksi Membuka Buku Harian
+const unlockBtn = document.getElementById('unlock-btn');
+const book = document.getElementById('book');
+
+unlockBtn.addEventListener('click', () => {
+  book.classList.add('open');
+});
