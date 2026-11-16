@@ -276,40 +276,59 @@ body {
   margin-bottom: 15px;
 }
 
-/* Efek Ketika Buku Terbuka */
 .book.open .front-cover {
   transform: rotateY(-180deg);
 }
-/* Merapikan Foto Asli di Dalam Bingkai Polaroid */
-.polaroid-img {
-  overflow: hidden;
-  padding: 0;
+
+/* --- STYLING POLAROID YANG RAPI & MUNGIL --- */
+.memories-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
 }
 
-.polaroid-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.memories-container h2 {
+  font-family: 'Caveat', cursive;
+  font-size: 36px;
+  color: #d6336c;
+  margin-bottom: 5px;
 }
-/* Mengatur ukuran kotak polaroid agar pas dan estetik */
+
+.memories-subtitle {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.polaroid-stack {
+  position: relative;
+  width: 200px;          /* Lebar pas ala polaroid */
+  height: 260px;         /* Tinggi pas ala polaroid */
+  margin: 10px auto 30px auto;
+}
+
 .polaroid-card {
-  width: 240px;          /* Lebar kartu polaroid */
+  width: 200px;
   background: white;
-  padding: 15px 15px 25px 15px; /* Jangka pinggir putih ala polaroid asli */
+  padding: 12px 12px 20px 12px; /* Bingkai putih sekeliling foto */
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
+  border-radius: 6px;
   position: absolute;
+  top: 0;
+  left: 0;
   transition: all 0.5s ease;
   cursor: pointer;
 }
 
-/* Mengatur ukuran gambar di dalam polaroid agar tidak terlalu besar */
 .polaroid-img {
   width: 100%;
-  height: 280px;         /* Tinggi area foto di dalam polaroid */
+  height: 175px;         /* Tinggi area foto di dalam polaroid */
   overflow: hidden;
   background: #f0f0f0;
+  border-radius: 2px;
 }
 
 .polaroid-img img {
@@ -319,12 +338,66 @@ body {
   display: block;
 }
 
-/* Teks caption di bawah foto */
 .polaroid-caption {
   font-family: 'Caveat', cursive;
-  font-size: 20px;
+  font-size: 18px;
   color: #555;
   text-align: center;
-  margin-top: 12px;
+  margin-top: 10px;
   margin-bottom: 0;
+}
+
+/* Styling Halaman Penutup (Kotak Kado) */
+.final-card {
+  background: #fffafb;
+  padding: 35px 25px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(214, 51, 108, 0.2);
+  max-width: 320px;
+}
+
+.gift-icon {
+  font-size: 55px;
+  cursor: pointer;
+  margin-bottom: 15px;
+  animation: bounce 1.5s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.final-card h2 {
+  font-family: 'Caveat', cursive;
+  font-size: 32px;
+  color: #d6336c;
+  margin-bottom: 10px;
+}
+
+.final-text {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.hidden-message {
+  background: #ffe6ee;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.hidden-message h3 {
+  font-family: 'Caveat', cursive;
+  font-size: 24px;
+  color: #c9184a;
+  margin-bottom: 5px;
+}
+
+.hidden-message p {
+  font-size: 13px;
+  color: #444;
 }
